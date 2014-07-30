@@ -1,12 +1,11 @@
 <h1>Artists</h1>
 
-<p><a href="/new_artist">Add a New Artist</a></p>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Image url</th>
+      <th>Image</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,11 +16,10 @@
   <% @artists.each do |artist| %>
     <tr>
           <td><%= artist.name %></td>
-          <td><%= artist.image_url %></td>
-          <td><a href="/artists/<%= artist.id %>">Show</a>
-        </td>
-      <td><a href="/artists/<%= artist.id %>/edit">Edit</a></td>
-      <td><a href="/artists/<%= artist.id %>/destroy">Destroy</a></td>
+          <td><img src="<%= artist.image_url %>"></td>
+      <td><button><a href="/artists/<%= artist.id %>">Show</a></button></td>
+      <td><button><a href="/artists/<%= artist.id %>/edit">Edit</a></button></td>
+      <td><button><a href="/artists/<%= artist.id %>/destroy">Destroy</a></button></td>
     </tr>
   <% end %>
   </tbody>
