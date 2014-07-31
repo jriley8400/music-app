@@ -8,8 +8,9 @@
   <div>
     <label for="artist_id">Artist</label><br />
     <select name="artist_id">
-      <option value="1">Kanye West</option>
-      <option value="3">Ariana Grande</option>
+      <% @artists.each do |artist| %>
+      <option value="<%= artist.id %>"><%= artist.name %></option>
+      <% end %>
     </select>
 
   </div>
